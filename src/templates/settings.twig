@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Arcosa plugin for Craft CMS 3.x
+ *
+ * Arcosa Settings.twig
+ *
+ * @author    Dustin Walker
+ * @copyright Copyright (c) 2021 Dustin Walker
+ * @link      https://dustinwalker.com
+ * @package   Arcosa
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("arcosa\\arcosa\\assetbundles\\arcosa\\ArcosaAsset") %}
+
+{{ forms.textField({
+    label: 'Some Field',
+    instructions: 'Enter some setting here.',
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: settings['someAttribute']})
+}}

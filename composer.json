@@ -1,0 +1,49 @@
+{
+    "name": "arcosa/arcosa",
+    "description": "Shared helper plugin",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "arcosa"
+    ],
+    "support": {
+        "docs": "https://github.com/Arcosa-Trench-Shoring/arcosa/blob/master/README.md",
+        "issues": "https://github.com/Arcosa-Trench-Shoring/arcosa/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dustin Walker",
+            "homepage": "https://dustinwalker.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "codeception/codeception": "^3.0",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "arcosa\\arcosa\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Arcosa",
+        "handle": "arcosa",
+        "developer": "Dustin Walker",
+        "developerUrl": "https://dustinwalker.com",
+        "documentationUrl": "https://github.com/Arcosa-Trench-Shoring/arcosa/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/Arcosa-Trench-Shoring/arcosa/master/CHANGELOG.md",
+        "components": {
+            "arcosaService": "arcosa\\arcosa\\services\\ArcosaService"
+        },
+        "class": "arcosa\\arcosa\\Arcosa"
+    }
+}
