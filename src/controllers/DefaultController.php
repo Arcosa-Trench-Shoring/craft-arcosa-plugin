@@ -46,7 +46,7 @@ class DefaultController extends Controller
      *         The actions must be in 'kebab-case'
      * @access protected
      */
-    protected $allowAnonymous = ['index', 'do-something'];
+    protected $allowAnonymous = ['index', 'check-url'];
 
     // Public Methods
     // =========================================================================
@@ -70,10 +70,78 @@ class DefaultController extends Controller
      *
      * @return mixed
      */
-    public function actionDoSomething()
+    public function actionCheckUrl()
     {
-        $result = 'Welcome to the DefaultController actionDoSomething() method';
+        $url = Craft::$app->request->getParam('validate');
+        if(!$this->_urlExists($url)) {
+            return json_encode([
+                "code" => 404,
+                "message" => 'Unknown Error',
+                "class" => 'detect-links--bad'
+            ]);
+        }
+        try {
+            $headers = get_headers(Craft::$app->request->getParam('validate'), 1);
+            $code = $headers[0];
+            $response = $this->_returnInfo($code);
+            return json_encode($response);
+        }
+        catch (exception $e) {
+            return json_encode([
+                "code" => 404,
+                "message" => 'Unknown Error',
+                "class" => 'detect-links--bad'
+            ]);
+        }
+    }
 
-        return $result;
+    private function _urlExists($url) {
+        $handle = curl_init($url);
+        curl_setopt($handle,  CURLOPT_RETURNTRANSFER, TRUE);
+        $response = curl_exec($handle);
+        $httpCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
+
+        if($httpCode >= 200 && $httpCode <= 400) {
+            return true;
+        } else {
+            return false;
+        }
+        curl_close($handle);
+    }
+
+    private function _returnInfo($headerCode) {
+        if(str_contains($headerCode, '301')) {
+            return [
+                "code" => 301,
+                "message" => 'Redirects',
+                "class" => 'detect-links--good'
+            ];
+        }
+        if(str_contains($headerCode, '404')) {
+            return [
+                "code" => 404,
+                "message" => 'Missing Page',
+                "class" => 'detect-links--bad'
+            ];
+        }
+        if(str_contains($headerCode, '403')) {
+            return [
+                "code" => 403,
+                "message" => 'Error',
+                "class" => 'detect-links--bad'
+            ];
+        }
+        if(str_contains($headerCode, '200')) {
+            return [
+                "code" => 200,
+                "message" => 'Valid',
+                "class" => 'detect-links--good'
+            ];
+        }
+        return [
+            "code" => 404,
+            "message" => 'Unknown Error',
+            "class" => 'detect-links--bad'
+        ];
     }
 }

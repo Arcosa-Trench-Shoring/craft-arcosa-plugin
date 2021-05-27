@@ -16,6 +16,8 @@ use arcosashoring\arcosa\models\Settings;
 use arcosashoring\arcosa\fields\ArcosaField as ArcosaFieldField;
 use arcosashoring\arcosa\utilities\ArcosaUtility as ArcosaUtilityUtility;
 use arcosashoring\arcosa\widgets\ArcosaWidget as ArcosaWidgetWidget;
+use arcosashoring\arcosa\assetbundles\arcosa\ArcosaAsset;
+
 
 use Craft;
 use craft\base\Plugin;
@@ -23,14 +25,19 @@ use craft\services\Plugins;
 use craft\events\PluginEvent;
 use craft\console\Application as ConsoleApplication;
 use craft\web\UrlManager;
+use craft\web\View;
 use craft\services\Fields;
 use craft\services\Utilities;
 use craft\web\twig\variables\CraftVariable;
 use craft\services\Dashboard;
 use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterUrlRulesEvent;
+use craft\events\TemplateEvent;
 
 use yii\base\Event;
+use yii\base\Exception;
+use yii\base\InvalidConfigException;
+
 
 /**
  * Craft plugins are very much like little applications in and of themselves. We’ve made
@@ -177,6 +184,26 @@ class Arcosa extends Plugin
                 }
             }
         );
+
+        // Load our AssetBundle
+        if (Craft::$app->getRequest()->getIsCpRequest()) {
+            Event::on(
+                View::class,
+                View::EVENT_BEFORE_RENDER_TEMPLATE,
+                function (TemplateEvent $event) {
+                    try {
+                        Craft::$app->getView()->registerAssetBundle(ArcosaAsset::class);
+                    } catch (InvalidConfigException $e) {
+                        Craft::error(
+                            'Error registering AssetBundle - ' . $e->getMessage(),
+                            __METHOD__
+                        );
+                    }
+                }
+            );
+        }
+
+
 
 /**
  * Logging in Craft involves using one of the following methods:

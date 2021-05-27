@@ -9,3 +9,20 @@
  * @package   Arcosa
  * @since     1.0.0
  */
+.detect-links--bad, .detect-links--good {
+    padding: 5px 15px;
+    margin-top: 5px;
+    font-size: 10px;
+    border-radius: 30px;
+    display: inline-block;
+    font-weight: bold;
+}
+.detect-links--bad {
+    background: rgba(225, 45, 57, 0.1);
+    color:  rgba(225, 45, 57, 1);
+}
+.detect-links--good {
+
+    background:rgba(40, 171, 131, 0.1);
+    color:rgba(40, 171, 131, 1);
+}
