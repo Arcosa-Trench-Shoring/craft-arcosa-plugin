@@ -35,11 +35,13 @@ class Settings extends Model
     // =========================================================================
 
     /**
-     * Some field model attribute
+     * Some field model attributec
      *
      * @var string
      */
-    public $someAttribute = 'Some Default';
+    public $accessKey = '';
+    public $broadcast = false;
+    public $syncFrequency = 1;
 
     // Public Methods
     // =========================================================================
@@ -57,8 +59,11 @@ class Settings extends Model
     public function rules()
     {
         return [
-            ['someAttribute', 'string'],
-            ['someAttribute', 'default', 'value' => 'Some Default'],
+            ['accessKey', 'string'],
+            ['syncFrequency', 'number'],
+            ['accessKey', 'default', 'value' => ''],
+            ['broadcast', 'string'],
+            ['broadcast', 'default', 'value' => false],
         ];
     }
 }

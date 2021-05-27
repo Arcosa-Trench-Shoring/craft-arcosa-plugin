@@ -55,7 +55,7 @@ class ArcosaField extends Field
      */
     public static function displayName(): string
     {
-        return Craft::t('arcosa', 'ArcosaField');
+        return Craft::t('arcosa', 'Arcosa - Break');
     }
 
     // Public Methods
@@ -222,16 +222,16 @@ class ArcosaField extends Field
      *
      * @return string|null
      */
-    public function getSettingsHtml()
-    {
-        // Render the settings template
-        return Craft::$app->getView()->renderTemplate(
-            'arcosa/_components/fields/ArcosaField_settings',
-            [
-                'field' => $this,
-            ]
-        );
-    }
+//    public function getSettingsHtml()
+//    {
+//        // Render the settings template
+//        return Craft::$app->getView()->renderTemplate(
+//            'arcosa/_components/fields/ArcosaField_settings',
+//            [
+//                'field' => $this,
+//            ]
+//        );
+//    }
 
     /**
      * Returns the field’s input HTML.

@@ -2,7 +2,7 @@
     "name": "arcosashoring/arcosa",
     "description": "Connecting plugin for Craft projects",
     "type": "craft-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": [
         "craft",
         "cms",
@@ -35,7 +35,7 @@
         }
     },
     "extra": {
-        "name": "arcosa",
+        "name": "Arcosa Shoring Craft Connector",
         "handle": "arcosa",
         "developer": "Dustin Walker",
         "developerUrl": "https://dustinwalker.com",

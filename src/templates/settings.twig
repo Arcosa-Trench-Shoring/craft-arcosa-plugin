@@ -18,9 +18,27 @@
 {% do view.registerAssetBundle("arcosashoring\\arcosa\\assetbundles\\arcosa\\ArcosaAsset") %}
 
 {{ forms.textField({
-    label: 'Some Field',
-    instructions: 'Enter some setting here.',
-    id: 'someAttribute',
-    name: 'someAttribute',
-    value: settings['someAttribute']})
+    label: 'Access Key',
+    instructions: 'Unique key that allows the sites to communicate to each other',
+    id: 'accessKey',
+    name: 'accessKey',
+    value: settings['accessKey']})
+}}
+
+
+{{ forms.lightswitchField({
+    label: 'Allow Broadcast',
+    instructions: 'When turned on, this will allow other sites with the same key to recieve information from this instance.',
+    id: 'broadcast',
+    name: 'broadcast',
+    value: settings['broadcast']})
+}}
+
+
+{{ forms.textField({
+    label: 'Sync frequency',
+    instructions: 'When turned on, this will allow other sites with the same key to recieve information from this instance.',
+    id: 'syncFrequency',
+    name: 'syncFrequency',
+    value: settings['syncFrequency']})
 }}
