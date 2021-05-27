@@ -2,7 +2,7 @@
     "name": "arcosashoring/arcosa",
     "description": "Connecting plugin for Craft projects",
     "type": "craft-plugin",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "keywords": [
         "craft",
         "cms",
