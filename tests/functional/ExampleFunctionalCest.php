@@ -1,6 +1,6 @@
 <?php
 
-namespace arcosa\arcosatests\acceptance;
+namespace arcosashoring\arcosatests\acceptance;
 
 use Craft;
 use FunctionalTester;

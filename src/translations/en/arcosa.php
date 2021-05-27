@@ -1,15 +1,15 @@
 <?php
 /**
- * Arcosa plugin for Craft CMS 3.x
+ * arcosa plugin for Craft CMS 3.x
  *
- * Shared helper plugin
+ * Connecting plugin for Craft projects
  *
  * @link      https://dustinwalker.com
  * @copyright Copyright (c) 2021 Dustin Walker
  */
 
 /**
- * Arcosa en Translation
+ * arcosa en Translation
  *
  * Returns an array with the string to be translated (as passed to `Craft::t('arcosa', '...')`) as
  * the key, and the translation as the value.
@@ -21,5 +21,5 @@
  * @since     1.0.0
  */
 return [
-    'Arcosa plugin loaded' => 'Arcosa plugin loaded',
+    'arcosa plugin loaded' => 'arcosa plugin loaded',
 ];

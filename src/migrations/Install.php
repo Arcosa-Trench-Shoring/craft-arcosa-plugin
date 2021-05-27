@@ -1,23 +1,23 @@
 <?php
 /**
- * Arcosa plugin for Craft CMS 3.x
+ * arcosa plugin for Craft CMS 3.x
  *
- * Shared helper plugin
+ * Connecting plugin for Craft projects
  *
  * @link      https://dustinwalker.com
  * @copyright Copyright (c) 2021 Dustin Walker
  */
 
-namespace arcosa\arcosa\migrations;
+namespace arcosashoring\arcosa\migrations;
 
-use arcosa\arcosa\Arcosa;
+use arcosashoring\arcosa\Arcosa;
 
 use Craft;
 use craft\config\DbConfig;
 use craft\db\Migration;
 
 /**
- * Arcosa Install Migration
+ * arcosa Install Migration
  *
  * If your plugin needs to create any custom database tables when it gets installed,
  * create a migrations/ folder within your plugin folder, and save an Install.php file

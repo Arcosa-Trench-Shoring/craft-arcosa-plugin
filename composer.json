@@ -1,6 +1,6 @@
 {
-    "name": "arcosa/arcosa",
-    "description": "Shared helper plugin",
+    "name": "arcosashoring/arcosa",
+    "description": "Connecting plugin for Craft projects",
     "type": "craft-plugin",
     "version": "1.0.0",
     "keywords": [
@@ -11,8 +11,8 @@
         "arcosa"
     ],
     "support": {
-        "docs": "https://github.com/Arcosa-Trench-Shoring/arcosa/blob/master/README.md",
-        "issues": "https://github.com/Arcosa-Trench-Shoring/arcosa/issues"
+        "docs": "https://github.com/arcosa/arcosa/blob/master/README.md",
+        "issues": "https://github.com/arcosa/arcosa/issues"
     },
     "license": "MIT",
     "authors": [
@@ -31,19 +31,19 @@
     },
     "autoload": {
         "psr-4": {
-          "arcosa\\arcosa\\": "src/"
+          "arcosashoring\\arcosa\\": "src/"
         }
     },
     "extra": {
-        "name": "Arcosa",
+        "name": "arcosa",
         "handle": "arcosa",
         "developer": "Dustin Walker",
         "developerUrl": "https://dustinwalker.com",
-        "documentationUrl": "https://github.com/Arcosa-Trench-Shoring/arcosa/blob/master/README.md",
-        "changelogUrl": "https://raw.githubusercontent.com/Arcosa-Trench-Shoring/arcosa/master/CHANGELOG.md",
+        "documentationUrl": "https://github.com/arcosa/arcosa/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/arcosa/arcosa/master/CHANGELOG.md",
         "components": {
-            "arcosaService": "arcosa\\arcosa\\services\\ArcosaService"
+            "arcosaService": "arcosashoring\\arcosa\\services\\ArcosaService"
         },
-        "class": "arcosa\\arcosa\\Arcosa"
+        "class": "arcosashoring\\arcosa\\Arcosa"
     }
 }

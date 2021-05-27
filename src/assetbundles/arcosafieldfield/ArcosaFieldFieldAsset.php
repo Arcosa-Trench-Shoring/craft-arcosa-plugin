@@ -1,14 +1,14 @@
 <?php
 /**
- * Arcosa plugin for Craft CMS 3.x
+ * arcosa plugin for Craft CMS 3.x
  *
- * Shared helper plugin
+ * Connecting plugin for Craft projects
  *
  * @link      https://dustinwalker.com
  * @copyright Copyright (c) 2021 Dustin Walker
  */
 
-namespace arcosa\arcosa\assetbundles\arcosafieldfield;
+namespace arcosashoring\arcosa\assetbundles\arcosafieldfield;
 
 use Craft;
 use craft\web\AssetBundle;
@@ -43,7 +43,7 @@ class ArcosaFieldFieldAsset extends AssetBundle
     public function init()
     {
         // define the path that your publishable resources live
-        $this->sourcePath = "@arcosa/arcosa/assetbundles/arcosafieldfield/dist";
+        $this->sourcePath = "@arcosashoring/arcosa/assetbundles/arcosafieldfield/dist";
 
         // define the dependencies
         $this->depends = [

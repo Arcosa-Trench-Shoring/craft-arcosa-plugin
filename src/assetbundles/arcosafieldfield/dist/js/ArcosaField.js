@@ -1,5 +1,5 @@
 /**
- * Arcosa plugin for Craft CMS
+ * arcosa plugin for Craft CMS
  *
  * ArcosaField Field JS
  *

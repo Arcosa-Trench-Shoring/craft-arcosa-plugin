@@ -1,7 +1,7 @@
 /**
  * arcosa plugin for Craft CMS
  *
- * arcosa JS
+ * ArcosaUtility Utility JS
  *
  * @author    Dustin Walker
  * @copyright Copyright (c) 2021 Dustin Walker

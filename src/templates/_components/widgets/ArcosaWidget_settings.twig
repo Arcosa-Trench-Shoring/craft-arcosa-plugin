@@ -3,7 +3,7 @@
 /**
  * arcosa plugin for Craft CMS
  *
- * ArcosaField Field Settings
+ * ArcosaWidget Widget Settings
  *
  * @author    Dustin Walker
  * @copyright Copyright (c) 2021 Dustin Walker
@@ -18,9 +18,9 @@
 {% do view.registerAssetBundle("arcosashoring\\arcosa\\assetbundles\\arcosa\\ArcosaAsset") %}
 
 {{ forms.textField({
-    label: 'Some Attribute',
-    instructions: 'Enter some attribute here.',
-    id: 'someAttribute',
-    name: 'someAttribute',
-    value: field['someAttribute']})
+    label: 'Message',
+    instructions: 'Enter a message here.',
+    id: 'message',
+    name: 'message',
+    value: widget['message']})
 }}

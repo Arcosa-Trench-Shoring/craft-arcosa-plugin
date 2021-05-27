@@ -1,17 +1,17 @@
 <?php
 /**
- * Arcosa plugin for Craft CMS 3.x
+ * arcosa plugin for Craft CMS 3.x
  *
- * Shared helper plugin
+ * Connecting plugin for Craft projects
  *
  * @link      https://dustinwalker.com
  * @copyright Copyright (c) 2021 Dustin Walker
  */
 
-namespace arcosa\arcosa\fields;
+namespace arcosashoring\arcosa\fields;
 
-use arcosa\arcosa\Arcosa;
-use arcosa\arcosa\assetbundles\arcosafieldfield\ArcosaFieldFieldAsset;
+use arcosashoring\arcosa\Arcosa;
+use arcosashoring\arcosa\assetbundles\arcosafieldfield\ArcosaFieldFieldAsset;
 
 use Craft;
 use craft\base\ElementInterface;

@@ -1,29 +1,34 @@
 <?php
 /**
- * Arcosa plugin for Craft CMS 3.x
+ * arcosa plugin for Craft CMS 3.x
  *
- * Shared helper plugin
+ * Connecting plugin for Craft projects
  *
  * @link      https://dustinwalker.com
  * @copyright Copyright (c) 2021 Dustin Walker
  */
 
-namespace arcosa\arcosa;
+namespace arcosashoring\arcosa;
 
-use arcosa\arcosa\services\ArcosaService as ArcosaServiceService;
-use arcosa\arcosa\variables\ArcosaVariable;
-use arcosa\arcosa\twigextensions\ArcosaTwigExtension;
-use arcosa\arcosa\models\Settings;
-use arcosa\arcosa\fields\ArcosaField as ArcosaFieldField;
+use arcosashoring\arcosa\services\ArcosaService as ArcosaServiceService;
+use arcosashoring\arcosa\variables\ArcosaVariable;
+use arcosashoring\arcosa\models\Settings;
+use arcosashoring\arcosa\fields\ArcosaField as ArcosaFieldField;
+use arcosashoring\arcosa\utilities\ArcosaUtility as ArcosaUtilityUtility;
+use arcosashoring\arcosa\widgets\ArcosaWidget as ArcosaWidgetWidget;
 
 use Craft;
 use craft\base\Plugin;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
 use craft\console\Application as ConsoleApplication;
+use craft\web\UrlManager;
 use craft\services\Fields;
+use craft\services\Utilities;
 use craft\web\twig\variables\CraftVariable;
+use craft\services\Dashboard;
 use craft\events\RegisterComponentTypesEvent;
+use craft\events\RegisterUrlRulesEvent;
 
 use yii\base\Event;
 
@@ -101,13 +106,28 @@ class Arcosa extends Plugin
         parent::init();
         self::$plugin = $this;
 
-        // Add in our Twig extensions
-        Craft::$app->view->registerTwigExtension(new ArcosaTwigExtension());
-
         // Add in our console commands
         if (Craft::$app instanceof ConsoleApplication) {
-            $this->controllerNamespace = 'arcosa\arcosa\console\controllers';
+            $this->controllerNamespace = 'arcosashoring\arcosa\console\controllers';
         }
+
+        // Register our site routes
+        Event::on(
+            UrlManager::class,
+            UrlManager::EVENT_REGISTER_SITE_URL_RULES,
+            function (RegisterUrlRulesEvent $event) {
+                $event->rules['siteActionTrigger1'] = 'arcosa/default';
+            }
+        );
+
+        // Register our CP routes
+        Event::on(
+            UrlManager::class,
+            UrlManager::EVENT_REGISTER_CP_URL_RULES,
+            function (RegisterUrlRulesEvent $event) {
+                $event->rules['cpActionTrigger1'] = 'arcosa/default/do-something';
+            }
+        );
 
         // Register our fields
         Event::on(
@@ -115,6 +135,24 @@ class Arcosa extends Plugin
             Fields::EVENT_REGISTER_FIELD_TYPES,
             function (RegisterComponentTypesEvent $event) {
                 $event->types[] = ArcosaFieldField::class;
+            }
+        );
+
+        // Register our utilities
+        Event::on(
+            Utilities::class,
+            Utilities::EVENT_REGISTER_UTILITY_TYPES,
+            function (RegisterComponentTypesEvent $event) {
+                $event->types[] = ArcosaUtilityUtility::class;
+            }
+        );
+
+        // Register our widgets
+        Event::on(
+            Dashboard::class,
+            Dashboard::EVENT_REGISTER_WIDGET_TYPES,
+            function (RegisterComponentTypesEvent $event) {
+                $event->types[] = ArcosaWidgetWidget::class;
             }
         );
 

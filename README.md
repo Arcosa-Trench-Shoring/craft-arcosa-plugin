@@ -1,6 +1,6 @@
-# Arcosa plugin for Craft CMS 3.x
+# arcosa plugin for Craft CMS 3.x
 
-Shared helper plugin
+Connecting plugin for Craft projects
 
 ![Screenshot](resources/img/plugin-logo.png)
 
@@ -18,23 +18,23 @@ To install the plugin, follow these instructions.
 
 2. Then tell Composer to load the plugin:
 
-        composer require Arcosa-Trench-Shoring/arcosa
+        composer require arcosa/arcosa
 
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Arcosa.
+3. In the Control Panel, go to Settings → Plugins and click the “Install” button for arcosa.
 
-## Arcosa Overview
-
--Insert text here-
-
-## Configuring Arcosa
+## arcosa Overview
 
 -Insert text here-
 
-## Using Arcosa
+## Configuring arcosa
 
 -Insert text here-
 
-## Arcosa Roadmap
+## Using arcosa
+
+-Insert text here-
+
+## arcosa Roadmap
 
 Some things to do, and ideas for potential features:
 

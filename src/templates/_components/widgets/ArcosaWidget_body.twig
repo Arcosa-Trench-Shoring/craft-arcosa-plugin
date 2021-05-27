@@ -1,0 +1,20 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * arcosa plugin for Craft CMS
+ *
+ * ArcosaWidget Widget Body
+ *
+ * @author    Dustin Walker
+ * @copyright Copyright (c) 2021 Dustin Walker
+ * @link      https://dustinwalker.com
+ * @package   Arcosa
+ * @since     1.0.0
+ */
+#}
+
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@arcosashoring/arcosa/assetbundles/arcosawidgetwidget/dist', true) ~ '/img/ArcosaWidget-icon.svg' %}
+
+<img src="{{ iconUrl }}" height="64" width="64" />
+
+<p>{{ message }}</p>

@@ -32,7 +32,7 @@ modules:
       migrations: []
       plugins:
         arcosa:
-          class: '\arcosa\arcosa\Arcosa'
+          class: '\arcosashoring\arcosa\Arcosa'
           handle: arcosa
       cleanup: true
       transaction: true

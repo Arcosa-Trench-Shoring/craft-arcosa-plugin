@@ -1,21 +1,21 @@
 <?php
 /**
- * Arcosa plugin for Craft CMS 3.x
+ * arcosa plugin for Craft CMS 3.x
  *
- * Shared helper plugin
+ * Connecting plugin for Craft projects
  *
  * @link      https://dustinwalker.com
  * @copyright Copyright (c) 2021 Dustin Walker
  */
 
-namespace arcosa\arcosa\variables;
+namespace arcosashoring\arcosa\variables;
 
-use arcosa\arcosa\Arcosa;
+use arcosashoring\arcosa\Arcosa;
 
 use Craft;
 
 /**
- * Arcosa Variable
+ * arcosa Variable
  *
  * Craft allows plugins to provide their own template variables, accessible from
  * the {{ craft }} global variable (e.g. {{ craft.arcosa }}).

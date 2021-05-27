@@ -1,17 +1,17 @@
 <?php
 /**
- * Arcosa plugin for Craft CMS 3.x
+ * arcosa plugin for Craft CMS 3.x
  *
- * Shared helper plugin
+ * Connecting plugin for Craft projects
  *
  * @link      https://dustinwalker.com
  * @copyright Copyright (c) 2021 Dustin Walker
  */
 
 /**
- * Arcosa config.php
+ * arcosa config.php
  *
- * This file exists only as a template for the Arcosa settings.
+ * This file exists only as a template for the arcosa settings.
  * It does nothing on its own.
  *
  * Don't edit this file, instead copy it to 'craft/config' as 'arcosa.php'

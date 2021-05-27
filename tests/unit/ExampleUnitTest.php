@@ -1,19 +1,19 @@
 <?php
 /**
- * Arcosa plugin for Craft CMS 3.x
+ * arcosa plugin for Craft CMS 3.x
  *
- * Shared helper plugin
+ * Connecting plugin for Craft projects
  *
  * @link      https://dustinwalker.com
  * @copyright Copyright (c) 2021 Dustin Walker
  */
 
-namespace arcosa\arcosatests\unit;
+namespace arcosashoring\arcosatests\unit;
 
 use Codeception\Test\Unit;
 use UnitTester;
 use Craft;
-use arcosa\arcosa\Arcosa;
+use arcosashoring\arcosa\Arcosa;
 
 /**
  * ExampleUnitTest
